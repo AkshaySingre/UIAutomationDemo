@@ -1,8 +1,12 @@
-package com.qa.testBase;
+package com.qa.pageLayer;
+
+
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.qa.testBase.TestBase;
 
 public class LoginPage extends TestBase {
 	
@@ -20,19 +24,19 @@ public class LoginPage extends TestBase {
    @FindBy(xpath="//input[@id='login-button']")
    private WebElement Login;
    
-   public void enterUserName()
+   public void enterUserName(String username)
    
    {
 	   Username.click();
-	   Username.sendKeys("standard_user");
+	   Username.sendKeys(username);
 	   
    }
- public void enterPassword()
+ public void enterPassword(String password)
    
    {
 	 Password.click();
-	 Password.sendKeys("secret_sauce");
-	   
+	 Password.sendKeys(password);
+	 
    }
  public void clickOnLogin()
  

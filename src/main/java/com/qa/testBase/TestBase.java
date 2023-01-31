@@ -10,12 +10,21 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.qa.Utilities.ReadExcel;
+import com.qa.pageLayer.LoginPage;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 
 	public static WebDriver driver;
-	public LoginPage l;
+	
+	public LoginPage login_obj;
+	public ReadExcel read_data;
+	
+	
+	
+	
     @BeforeMethod
 	public void start()
 	{
@@ -46,9 +55,15 @@ public class TestBase {
 		driver.get("https://www.saucedemo.com/");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		l = new LoginPage();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		login_obj = new LoginPage();
+		read_data = new ReadExcel();
 		}
+    
+    
+    
+    
    @AfterMethod
     public void teardown()
     {
