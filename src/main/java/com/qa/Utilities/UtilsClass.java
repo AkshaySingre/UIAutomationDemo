@@ -22,7 +22,7 @@ public class UtilsClass extends TestBase {
 	
 	public static void takeSS(String filename)
 	{
-		String path = "C:\\Users\\akshay.singre\\git\\repository\\UIAutomationDemo\\Screenshot";
+		String path = "C:\\Users\\akshay.singre\\git\\repository\\UIAutomationDemo\\Screenshot\\";
 		
 		try {
 		TakesScreenshot ts = (TakesScreenshot)driver;
